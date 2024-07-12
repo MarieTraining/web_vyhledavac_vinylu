@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domovská stránka</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="{{url_for('static', filename ='styles.css')}}">
+</head>
+<body style="border-color: red;">
+    <div style="border-color: rgba(255, 183, 0, 0.793);" class="cont">
+        <div style="border-color: rgba(67, 32, 32, 0.793);" class="lista">
+            <a class='link' href="/oprojektu">O PROJEKTU</a>
+            <div style="width:10px;"></div>
+            <a class='link' href="/vyhledani">VYHLEDAVANI</a>
+        </div>
+        <div style="border-color: rgba(0, 51, 255, 0.858);" class="group5">
+            <img style="width:100%;" src="/static/images/horni_lista.jpg" alt="">
+        </div>
+        <!--- <h1>Domovská stránka</h1>
+        {{list_of_cookies}}--->
+        <div style="border-color: rgba(0, 225, 255, 0.858);" class="group0">
+            <div style="border-color: rgba(255, 0, 68, 0.858);" class="group10">
+                <div style="border-color: rgba(72, 66, 68, 0.858);" class="group7">
+                    <img class="img" src="/static/images/home_left.png" alt="">
+                </div>
+                <div style="border-color: rgba(61, 47, 47, 0.858);" class="group9"></div>
+            </div>
+            <div style="border-color: rgba(162, 0, 255, 0.858);" class="group2">
+                <div style="border-color: rgba(66, 60, 64, 0.793);" class="group4">
+                    <div style="border-color: rgba(186, 217, 33, 0.793);" class="group11"></div>
+                    <form style="border-color: rgba(255, 0, 179, 0.793);" action="/vyhledani" method="GET">
+                        <input class='input' type='text' name="hledany_vyraz" placeholder='jméno desky nebo autora'>
+                        <input type="submit" class="tlacitko" value="HLEDEJ">
+                    </form>
+                </div>
+                <div style="border-color: rgba(221, 255, 0, 0.858);" class="group3">
+                    <div style="border-color: rgba(221, 255, 0, 0.858);" class="group13">
+                        <p>NOVINKY:</p>
+                        <div style="border-color: rgba(199, 92, 163, 0.793);" class="group12">
+                            {% for radek in tabulka4 %}
+                            <div class="item_detail">
+                                <tr>
+                                    <td >  
+                                        <a href="{{ radek.link }}">
+                                            <img class="img2" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}">
+                                        </a>                                 
+                                    {{ radek.nazev }}<br>
+                                    {{ radek.autor }}<br>
+                                    {{ radek.rok }}<br>
+                                    {{ radek.vydavatelstvi }}<br>
+                                    {{ radek.cena }}<br>
+                                    {{ radek.IDdeska }}</td>
+                                </tr>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div style="width:10px;"></div>
+                    <div>
+                        <div style="border-color: rgba(221, 255, 0, 0.858);" class="group14">
+                            <p>NEJHLEDANĚJŠÍ:</p>
+                            {% if tabulka5 %}
+                            <div class="item_detail">
+                                <tr >
+                                    <td>
+                                    <a href="{{ tabulka5.link }}">
+                                        <img class="img2" src="{{ tabulka5.hlavni_obrazek }}" alt="{{ tabulka5.hlavni_obrazek }}">
+                                    </a></td>
+                                    {{ tabulka5.nazev }}<br>
+                                    {{ tabulka5.autor }}<br>
+                                    {{ tabulka5.rok }}<br>
+                                    {{ tabulka5.cena }}<br>
+                                </tr>
+                            </div>
+                            {% else %}
+                            <div class="item_detail">
+                                    <tr>
+                                        <td>
+                                            <a href="{{ tabulka4[0].link }}">
+                                                <img class="img2" src="{{ tabulka4[0].hlavni_obrazek }}" alt="{{ tabulka4[0].hlavni_obrazek }}">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{ tabulka4[0].nazev }}<br>
+                                            {{ tabulka4[0].autor }}<br>
+                                            {{ tabulka4[0].rok }}<br>
+                                            {{ tabulka4[0].cena }}<br>
+                                        </td>
+                                    </tr>
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

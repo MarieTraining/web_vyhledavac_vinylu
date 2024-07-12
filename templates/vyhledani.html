@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyhledani</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="border-color: red;">
+    <div style="border-color: rgba(255, 183, 0, 0.793);" class="cont">
+        <div style="border-color: rgba(57, 34, 5, 0.858);" class="nad_lista">
+            <div style="border-color: rgba(57, 34, 5, 0.858);" class="lista">
+                <a class='link' href="/">HOME</a> <div style= "width:10px;"></div>
+                <a class='link' href="/oprojektu">O PROJEKTU</a>
+            </div>
+        </div>
+        <div style="border-color: rgba(0, 51, 255, 0.858);" class="group5">
+            <img style="width:100%;" src="/static/images/horni_lista.jpg" alt="">
+        </div>
+        <br>
+        <!--      
+        <p>Value of 'mycookie': {{list_of_cookies }}</p>
+        -->
+        <div style="border-color: rgba(66, 60, 64, 0.793);" class="group6">
+            <div style="border-color: rgba(76, 164, 31, 0.793);" class="hledani2">
+                <form style="border-color: rgba(255, 0, 179, 0.793);" action="/vyhledani" method="GET">
+                    <input class='input' type='text' name="hledany_vyraz" placeholder='jméno desky nebo autora'>
+                    <input type="submit" class="tlacitko" value="HLEDEJ">
+                </form>
+            </div>
+            <p></p>
+            <br>
+            <p></p>               
+            <div style="border-color: rgba(199, 92, 163, 0.793);" class="group12">
+                {% if tabulka3 %}
+                    {% for radek in tabulka3 %}
+                    <div class="item">
+                        <tr>
+                            <td class="col1">  
+                                <a href="{{ radek.link }}">
+                                    <img class="img3" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}">
+                                </a>                                 
+                            {{ radek.nazev }}<br>
+                            {{ radek.autor }}<br>
+                            {{ radek.rok }}<br>
+                            {{ radek.vydavatelstvi }}<br>
+                            {{ radek.cena }}<br>
+                            {{ radek.IDdeska }}</td>
+                        </tr>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Nebyly nalezeny žádné záznamy</p>
+                {% endif %}
+            </div>
+             <!-- New part starts here -->
+             {% if most_frequent_search %}
+             <div style="margin-top: 20px; border-color: rgba(255, 0, 0, 0.793);">
+                 <h3>Most frequently searched term: {{ most_frequent_search }}</h3>
+             </div>
+             {% endif %}
+             <!-- New part ends here -->
+        </div>
+    </div>
+</body>
+</html>
+
+
+
