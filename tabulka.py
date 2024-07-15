@@ -19,7 +19,7 @@ class Tabulka:
         self.mydb = db.connect(
             host="MarieTraining.mysql.pythonanywhere-services.com",
             user="MarieTraining",  # PythonAnywhere username
-            password="pythonanywherepassword",  # Database password
+            password="****",  # Database password
             database="MarieTraining$dB_vyhledavac_desek",
             port=3306
         )
