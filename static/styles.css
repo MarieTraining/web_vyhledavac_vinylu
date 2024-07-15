@@ -70,7 +70,7 @@ input {
 /* Images */
 img {
   width: auto;
-  object-fit: cover; /* Image fills its container */
+  object-fit: cover; 
   max-height: 370px;
 }
 
@@ -174,13 +174,13 @@ img:hover {
 }
 
 .item {
-  flex: 0 1 calc(20% - 10px); /* Ensure items don't grow or shrink unexpectedly */
-  max-width: calc(20% - 10px); /* Ensure items don't exceed 20% width */
+  flex: 0 1 calc(20% - 10px); 
+  max-width: calc(20% - 10px); 
 }
 
 .item_detail {
-  flex: 0 1 calc(30% - 10px); /* Ensure items don't grow or shrink unexpectedly */
-  max-width: calc(30% - 10px); /* Ensure items don't exceed 30% width */
+  flex: 0 1 calc(30% - 10px); 
+  max-width: calc(30% - 10px); 
   min-width: 170px;
 }
 
@@ -200,7 +200,7 @@ p {
 }
 
 .lista {
-  border: 2px solid black; /* Fixed border shorthand */
+  border: 2px solid black; 
   justify-content: flex-end;
   height: 40px;
   align-items: center;
