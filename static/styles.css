@@ -3,9 +3,9 @@
   border-style: solid;
   margin: 1px;
   box-sizing: border-box; 
-}
-*/
-/* Global styles */
+}*/
+
+/* Global*/
 body {
   background-color: whitesmoke;
   display: flex;
@@ -24,38 +24,32 @@ h1 {
   color: #713875;
 }
 
-/* Containers */
-.cont {
-  display: flex;
-  flex-direction: column;
-  min-width: 97vw;
-  justify-content: center;
-}
 
+/* Form */
 .hledani {
   display: flex;
   flex-direction: row;
-  width: 40vw;
+  min-width: 40vw;
 }
 
 .hledani2 {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  min-width: 80vw;
 }
 
-/* Form */
+
 form {
   display: flex;
   flex-direction: row;
   font-family: Helvetica;
-  width: 100%;
+  
 }
 
 input {
   min-width: 150px;
   font-size: 20px;
-  width: 99%;
+  
 }
 
 .tlacitko {
@@ -64,7 +58,7 @@ input {
   font-weight: bolder;
   color: #20150f;
   font-size: 26px;
-  width: 50px;
+  min-width: 50px;
 }
 
 /* Images */
@@ -78,11 +72,12 @@ img {
   border: 0;
   border-radius: 4px;
   padding: 5px;
-  max-width: 90%;
+  max-width: 20vw;
   height: 25vh;
   margin-left: 10px;
   margin-right: 10px;
-  object-fit: contain;
+  object-fit: cover;
+  max-height: 100px;
 }
 
 .img3 {
@@ -98,40 +93,46 @@ img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
-/* Groups */
+/* Containers */
+.cont {
+  display: flex;
+  flex-direction: column;
+  min-width: 97vw;
+  width:fit-content;
+  justify-content: flex-start;
+}
 .group0 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 99%;
+  min-width:fit-content;
 }
 
 .group1, .group6 {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .group2 {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  width: 70%;
+  justify-content: flex-start;
+ 
 }
 
 .group3, .group7 {
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  width: 99%;
+  justify-content: flex-start;
+ 
 }
 
 .group5 {
   background-color: #cec3a6;
   display: flex;
   flex-direction: column;
-  width: 99%;
+ 
 }
 
 .group8, .group9 {
@@ -141,11 +142,13 @@ img:hover {
 .group10 {
   display: flex;
   flex-direction: row;
-  width: 30%;
+ 
 }
 
 .group11 {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   height: 20px;
 }
 
@@ -153,13 +156,24 @@ img:hover {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 10px; /* Space between items */
+  gap: 10px; 
+  min-width:600px;
+  max-width: calc(65% - 10px);
 }
 
-.group13, .group14 {
+.group13{
   display: flex;
   flex-direction: column;
+}
+
+.group14 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width:fit-content;
+  gap: 10px; 
+  
 }
 
 /* Items */
@@ -168,6 +182,7 @@ img:hover {
   padding: 20px;
   box-sizing: border-box;
   max-height: 250px;
+  min-height: 150px;
   font-size: small;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -175,12 +190,12 @@ img:hover {
 
 .item {
   flex: 0 1 calc(20% - 10px); 
-  max-width: calc(20% - 10px); 
+  min-width: calc(20% - 10px);
 }
 
 .item_detail {
-  flex: 0 1 calc(30% - 10px); 
-  max-width: calc(30% - 10px); 
+  flex: 0 1 calc(20% - 10px); 
+  max-width: calc(20% - 10px); 
   min-width: 170px;
 }
 
@@ -195,13 +210,13 @@ p {
 .nad_lista, .lista {
   display: flex;
   flex-direction: row;
-  width: 99%;
+  width: 100%;
   background-color: #20150f;
 }
 
 .lista {
   border: 2px solid black; 
-  justify-content: flex-end;
+  justify-content: flex-start;
   height: 40px;
   align-items: center;
 }
