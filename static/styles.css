@@ -1,10 +1,10 @@
-/* Reset and Global Styles */
+/* Reset and Global Styles 
 * {
   border-style: solid;
   margin: 1px;
   box-sizing: border-box; 
 }
-
+*/
 /* Global styles */
 body {
   background-color: whitesmoke;
@@ -30,7 +30,6 @@ h1 {
   flex-direction: column;
   min-width: 97vw;
   justify-content: center;
-  min-height: 80vh;
 }
 
 .hledani {
