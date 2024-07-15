@@ -5,8 +5,8 @@ class Tabulka:
     def __init__(self):
         self.mydb = db.connect(
             host="localhost",
-            user="***",
-            password="***",
+            user="root",
+            password="",
             database="dB_vyhledavac_desek",
             port=3306 
         )
