@@ -1,5 +1,6 @@
 import mysql.connector as db
 import numpy as np
+
 class Tabulka:
     def __init__(self):
         self.mydb = db.connect(
@@ -10,7 +11,21 @@ class Tabulka:
             port=3306 
         )
         self.cursor = self.mydb.cursor(dictionary=True)
-      
+        
+        """
+#nove pro pythonanywhere
+class Tabulka:
+    def __init__(self):
+        self.mydb = db.connect(
+            host="MarieTraining.mysql.pythonanywhere-services.com",
+            user="MarieTraining",  # PythonAnywhere username
+            password="pythonanywherepassword",  # Database password
+            database="MarieTraining$dB_vyhledavac_desek",
+            port=3306
+        )
+        self.cursor = self.mydb.cursor(dictionary=True)
+#nove pro pythonanywhere
+        """
     def print_table(self):
         self.cursor.execute(f"select hlavni_obrazek, nazev, autor, rok, vydavatelstvi, cena, link from gramodeska ")
         dataset = self.cursor.fetchall()
