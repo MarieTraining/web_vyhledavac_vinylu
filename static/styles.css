@@ -1,9 +1,9 @@
-/* Reset and Global Styles */
+/* Reset and Global Styles 
 * {
   border-style: solid;
   margin: 1px;
   box-sizing: border-box; 
-}
+}*/
 
 /* Global*/
 body {
@@ -45,6 +45,7 @@ z-index: 1000; /* navrchu nad vsim */
 .hledani {
   display: flex;
   flex-direction: row;
+  justify-content:flex-end;
   min-width: 40vw;
 }
 
@@ -82,6 +83,7 @@ img {
   width: auto;
   object-fit: cover; 
   max-height: 370px;
+  border: 2px solid black;
 }
 
 .img2 {
@@ -144,6 +146,11 @@ img:hover {
  
 }
 
+.group4 {
+  display: flex;
+  flex-direction: column;
+}
+
 .group5 {
   background-color: #cec3a6;
   display: flex;
@@ -180,9 +187,20 @@ img:hover {
 .group13{
   display: flex;
   flex-direction: column;
+  width:min-content
 }
 
 .group14 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width:fit-content;
+
+  
+}
+
+
+.group15{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -191,6 +209,7 @@ img:hover {
   gap: 10px; 
   
 }
+
 
 /* Items */
 .item, .item_detail {
@@ -202,6 +221,7 @@ img:hover {
   font-size: small;
   overflow: hidden;
   text-overflow: ellipsis;
+  border: 2px solid black;
 }
 
 .item {
@@ -226,6 +246,7 @@ p {
 .nad_lista, .lista {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   width: 100%;
   background-color: #20150f;
 }

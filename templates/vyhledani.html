@@ -31,15 +31,15 @@
             <p></p>
             <br>
             <p></p>               
-            <div style="border-color: rgba(199, 92, 163, 0.793);" class="group14">
+            <div style="border-color: rgba(199, 92, 163, 0.793);" class="group15">
                 {% if tabulka3 %}
                     {% for radek in tabulka3 %}
                     <div class="item">
                         <tr>
                             <td class="col1">  
                                 <a href="{{ radek.link }}">
-                                    <img class="img3" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}">
-                                </a>                                 
+                                    <img class="img3" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}"><br>
+                                </a> <br>                                
                             {{ radek.nazev }}<br>
                             {{ radek.autor }}<br>
                             {{ radek.rok }}<br>

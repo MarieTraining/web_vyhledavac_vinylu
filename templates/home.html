@@ -28,6 +28,7 @@
                 <div style="border-color: rgba(61, 47, 47, 0.858);" class="group9"></div>
             </div>
             <div style="border-color: rgba(162, 0, 255, 0.858);" class="group2">
+                
                 <div style="border-color: rgba(66, 60, 64, 0.793);" class="group4">
                     <div style="border-color: rgba(186, 217, 33, 0.793);" class="group11"></div>
                     <form style="border-color: rgba(255, 0, 179, 0.793);" action="/vyhledani" method="GET">
@@ -36,8 +37,9 @@
                     </form>
                 </div>
                 <div style="border-color: rgba(153, 0, 255, 0.858);" class="group3">
+                    <div style="width:10px;"></div>
                     <div style="border-color: rgba(0, 13, 255, 0.858);" class="group13">
-                        <p>NOVINKY:</p>
+                        <p>NOVINKY:</p><br>
                         <div style="border-color: rgba(199, 92, 163, 0.793);" class="group12">
                             {% for radek in tabulka4 %}
                             <div class="item_detail">
@@ -45,7 +47,7 @@
                                     <td >  
                                         <a href="{{ radek.link }}">
                                             <img class="img2" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}">
-                                        </a>                                 
+                                        </a><br>                               
                                     {{ radek.nazev }}<br>
                                     {{ radek.autor }}<br>
                                     {{ radek.rok }}<br>
@@ -60,14 +62,14 @@
                     <div style="width:10px;"></div>
                     <div>
                         <div style="border-color: rgba(221, 255, 0, 0.858);" class="group14">
-                            <p>NEJHLEDANĚJŠÍ:</p>
+                            <p>NEJHLEDANĚJŠÍ:</p><br>
                             {% if tabulka5 %}
                             <div class="item_detail">
                                 <tr >
                                     <td>
                                     <a href="{{ tabulka5.link }}">
                                         <img class="img2" src="{{ tabulka5.hlavni_obrazek }}" alt="{{ tabulka5.hlavni_obrazek }}">
-                                    </a></td>
+                                    </a></td><br>
                                     {{ tabulka5.nazev }}<br>
                                     {{ tabulka5.autor }}<br>
                                     {{ tabulka5.rok }}<br>
