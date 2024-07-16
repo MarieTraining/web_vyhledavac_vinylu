@@ -35,8 +35,8 @@
                         <input type="submit" class="tlacitko" value="HLEDEJ">
                     </form>
                 </div>
-                <div style="border-color: rgba(221, 255, 0, 0.858);" class="group3">
-                    <div style="border-color: rgba(221, 255, 0, 0.858);" class="group13">
+                <div style="border-color: rgba(153, 0, 255, 0.858);" class="group3">
+                    <div style="border-color: rgba(0, 13, 255, 0.858);" class="group13">
                         <p>NOVINKY:</p>
                         <div style="border-color: rgba(199, 92, 163, 0.793);" class="group12">
                             {% for radek in tabulka4 %}
@@ -97,11 +97,13 @@
                 </div>
             </div>
         </div>
+        
+        
     </div>
-    <!---nove-->
-    <button id="myButton">Click Me!</button>
-    <script src="script.js"></script>
-    <!---nove-->
+    <!---novy js button-->
+    <button class="student-work-button" onclick="showMessage()">Tohle je pouze STUDIJNÍ PROJEKT, pokračuj kliknutím</button>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!---novy-->
 </body>
 </html>
 
