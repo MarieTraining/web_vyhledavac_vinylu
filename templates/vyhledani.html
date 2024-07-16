@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body style="border-color: red;">
-    <div style="border-color: rgba(255, 183, 0, 0.793);" class="cont">
+    <div style="border-color: rgba(255, 183, 0, 0.793);" class="gr0">
         <div style="border-color: rgba(57, 34, 5, 0.858);" class="nad_lista">
             <div style="border-color: rgba(57, 34, 5, 0.858);" class="lista">
                 <a class='link' href="/">HOME</a> <div style= "width:10px;"></div>
                 <a class='link' href="/oprojektu">O PROJEKTU</a>
             </div>
         </div>
-        <div style="border-color: rgba(0, 51, 255, 0.858);" class="group5">
+        <div style="border-color: rgba(0, 51, 255, 0.858);" class="gr1">
             <img style="width:100%;" src="/static/images/horni_lista.jpg" alt="">
         </div>
         <br>
         <!--      
         <p>Value of 'mycookie': {{list_of_cookies }}</p>
         -->
-        <div style="border-color: rgba(66, 60, 64, 0.793);" class="group6">
+        <div style="border-color: rgba(66, 60, 64, 0.793);" class="gr12">
             <div style="border-color: rgba(76, 164, 31, 0.793);" class="hledani2">
                 <form style="border-color: rgba(255, 0, 179, 0.793);" action="/vyhledani" method="GET">
                     <input class='input' type='text' name="hledany_vyraz" placeholder='jméno desky nebo autora'>
@@ -31,7 +31,7 @@
             <p></p>
             <br>
             <p></p>               
-            <div style="border-color: rgba(199, 92, 163, 0.793);" class="group15">
+            <div style="border-color: rgba(199, 92, 163, 0.793);" class="gr13">
                 {% if tabulka3 %}
                     {% for radek in tabulka3 %}
                     <div class="item">
