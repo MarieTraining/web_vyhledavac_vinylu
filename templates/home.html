@@ -50,12 +50,13 @@
                                         <a href="{{ radek.link }}">
                                             <img class="img2" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}">
                                         </a><br>                               
-                                    {{ radek.nazev }}<br>
-                                    {{ radek.autor }}<br>
-                                    {{ radek.rok }}<br>
-                                    {{ radek.vydavatelstvi }}<br>
-                                    {{ radek.cena }}<br>
-                                    {{ radek.IDdeska }}</td>
+                                        {{ radek.nazev }}<br>
+                                        {% if radek.autor | length > 20 %}
+                                            {{ radek.autor[:20] }}...<br>
+                                        {% else %}
+                                            {{ radek.autor }}<br>
+                                        {% endif %}
+                                        {{ radek.cena }}<br>
                                 </tr>
                             </div>
                             {% endfor %}
@@ -74,7 +75,6 @@
                                     </a></td><br>
                                     {{ tabulka5.nazev }}<br>
                                     {{ tabulka5.autor }}<br>
-                                    {{ tabulka5.rok }}<br>
                                     {{ tabulka5.cena }}<br>
                                 </tr>
                             </div>
@@ -105,7 +105,7 @@
         
     </div>
     <!---novy js button-->
-    <button class="student-work-button" onclick="showMessage()">Tohle je pouze STUDIJNÍ PROJEKT, pokračuj kliknutím</button>
+    <button class="student-work-button" onclick="showMessage()">"Tohle je pouze STUDIJNÍ PROJEKT, na stránkách se pracuje, pokračuj kliknutím"</button>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <!---novy-->
 </body>

@@ -36,10 +36,9 @@
                     {% for radek in tabulka3 %}
                     <div class="item">
                         <tr>
-                            <td class="col1">  
-                                <a href="{{ radek.link }}">
-                                    <img class="img3" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}"><br>
-                                </a> <br>                                
+                            <a href="{{ radek.link }}">
+                                <img class="img3" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.nazev }}">
+                            </a><br> 
                             {{ radek.nazev }}<br>
                             {{ radek.autor }}<br>
                             {{ radek.rok }}<br>

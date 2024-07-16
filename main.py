@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, make_response
 from tabulka import Tabulka 
 from cookie_manager import Cookie_Manager
 
-app = Flask(__name__)
+#app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 #/ nebo domovská stránka @app.route("/", methods=["GET", "POST"])
 # --- GET --- viditelně v URL, používám pro specifikaci dotazu ukol = request.args.get("ukol")  
