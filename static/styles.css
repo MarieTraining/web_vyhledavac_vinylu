@@ -219,7 +219,7 @@ img:hover {
   padding: 20px;
   box-sizing: border-box;
   max-height: 250px;
-  min-height: 150px;
+  min-height:200px;
   font-size: small;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -227,14 +227,15 @@ img:hover {
 }
 
 .item {
-  flex: 0 1 calc(20% - 10px); 
+   
   min-width: calc(20% - 10px);
 }
 
 .item_detail {
-  flex: 0 1 calc(20% - 10px); 
-  max-width: calc(20% - 10px); 
+  
+  max-width: 170px; 
   min-width: 170px;
+  
 }
 
 /* Paragraphs */

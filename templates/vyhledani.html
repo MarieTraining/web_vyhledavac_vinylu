@@ -39,8 +39,17 @@
                             <a href="{{ radek.link }}">
                                 <img class="img3" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.nazev }}">
                             </a><br> 
-                            {{ radek.nazev }}<br>
-                            {{ radek.autor }}<br>
+                            {% if radek.nazev | length > 40 %}
+                                {{ radek.nazev[:20] }}...<br>
+                            {% else %}
+                                {{ radek.nazev }}<br>
+                            {% endif %}
+
+                            {% if radek.autor | length > 40 %}
+                                {{ radek.autor[:20] }}...<br>
+                            {% else %}
+                                {{ radek.autor }}<br>
+                            {% endif %}
                             {{ radek.rok }}<br>
                             {{ radek.vydavatelstvi }}<br>
                             {{ radek.cena }}<br>

@@ -50,12 +50,18 @@
                                         <a href="{{ radek.link }}">
                                             <img class="img2" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}">
                                         </a><br>                               
-                                        {{ radek.nazev }}<br>
+                                        {% if radek.nazev | length > 20 %}
+                                            {{ radek.nazev[:20] }}...<br>
+                                        {% else %}
+                                            {{ radek.nazev }}<br>
+                                        {% endif %}
+
                                         {% if radek.autor | length > 20 %}
                                             {{ radek.autor[:20] }}...<br>
                                         {% else %}
                                             {{ radek.autor }}<br>
                                         {% endif %}
+
                                         {{ radek.cena }}<br>
                                 </tr>
                             </div>
@@ -73,8 +79,17 @@
                                     <a href="{{ tabulka5.link }}">
                                         <img class="img2" src="{{ tabulka5.hlavni_obrazek }}" alt="{{ tabulka5.hlavni_obrazek }}">
                                     </a></td><br>
-                                    {{ tabulka5.nazev }}<br>
-                                    {{ tabulka5.autor }}<br>
+                                    {% if tabulka5.nazev | length > 20 %}
+                                        {{tabulka5.nazev[:20] }}...<br>
+                                    {% else %}
+                                        {{ tabulka5.nazev }}<br>
+                                    {% endif %}
+
+                                    {% if tabulka5.autor | length > 20 %}
+                                        {{tabulka5.autor[:20] }}...<br>
+                                    {% else %}
+                                        {{ tabulka5.autor }}<br>
+                                    {% endif %}
                                     {{ tabulka5.cena }}<br>
                                 </tr>
                             </div>
@@ -87,9 +102,17 @@
                                             </a>
                                         </td>
                                         <td>
+                                        {% if tabulkav4[0].nazev | length > 20 %}
+                                            {{tabulka4[0].nazev[:20] }}...<br>
+                                        {% else %}
                                             {{ tabulka4[0].nazev }}<br>
+                                        {% endif %}
+    
+                                        {% if tabulka4[0].autor | length > 20 %}
+                                            {{tabulka4[0].autor[:20] }}...<br>
+                                        {% else %}
                                             {{ tabulka4[0].autor }}<br>
-                                            {{ tabulka4[0].rok }}<br>
+                                        {% endif %}
                                             {{ tabulka4[0].cena }}<br>
                                         </td>
                                     </tr>
