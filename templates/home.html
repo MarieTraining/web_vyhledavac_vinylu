@@ -4,138 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domovská stránka</title>
-    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
-    <link rel="stylesheet" href="{{url_for('static', filename ='styles.css')}}">
-    
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body style="border-color: red;">
-    <div style="border-color: rgba(255, 183, 0, 0.793);" class="gr0">
-        <div style="border-color: rgba(67, 32, 32, 0.793);" class="lista">
+<body>
+    <div class="gr0">
+        <div class="lista">
             <a class='link' href="/oprojektu">O PROJEKTU</a>
             <div style="width:10px;"></div>
             <a class='link' href="/vyhledani">VYHLEDAVANI</a>
         </div>
-        <div style="border-color: rgba(0, 51, 255, 0.858);" class="gr1">
-            <img style="width:100%;" src="/static/images/horni_lista.jpg" alt="">
+        <div class="gr1">
+            <img style="width:100%;" src="{{ url_for('static', filename='images/horni_lista.jpg') }}" alt="">
         </div>
-        <!--- {{list_of_cookies}}--->
-        <div style="border-color: rgba(0, 225, 255, 0.858);" class="gr2">
-            <div style="border-color: rgba(255, 0, 68, 0.858);" class="gr3">
-                <div style="border-color: rgba(72, 66, 68, 0.858);" class="gr4">
-                    <img class="img" src="/static/images/home_left.png" alt="">
+        <div class="gr2">
+            <div class="gr3">
+                <div class="gr4">
+                    <img class="img" src="{{ url_for('static', filename='images/home_left.png') }}" alt="">
                 </div>
-                <div style="border-color: rgba(61, 47, 47, 0.858);" class="gr5"></div>
+                <div class="gr5"></div>
             </div>
-            <div style="border-color: rgba(162, 0, 255, 0.858);" class="gr6">
-                
-                <div style="border-color: rgba(66, 60, 64, 0.793);" class="gr7">
-                    <div style="border-color: rgba(186, 217, 33, 0.793);" class="gr8"></div>
-                    <div style="border-color: rgba(47, 153, 160, 0.793);" class="gr15">
-                        
-                        <form style="border-color: rgba(255, 0, 179, 0.793);" action="/vyhledani" method="GET">
+            <div class="gr6">
+                <div class="gr7">
+                    <div class="gr8"></div>
+                    <div class="gr15">
+                        <form action="/vyhledani" method="GET">
                             <input class='input' type='text' name="hledany_vyraz" placeholder='jméno desky nebo autora'>
                             <input type="submit" class="tlacitko" value="HLEDEJ">
                         </form>
                     </div>
                 </div>
-                <div style="border-color: rgba(153, 0, 255, 0.858);" class="gr9">
+                <div class="gr9">
                     <div style="width:10px;"></div>
-                    <div style="border-color: rgba(0, 13, 255, 0.858);" class="gr10">
+                    <div class="gr10">
                         <p>NOVINKY:</p><br>
-                        <div style="border-color: rgba(199, 92, 163, 0.793);" class="gr14">
+                        <div class="gr14">
                             {% for radek in tabulka4 %}
                             <div class="item_detail">
-                                <tr>
-                                    <td >  
-                                        <a href="{{ radek.link }}">
-                                            <img class="img2" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}">
-                                        </a><br>                               
-                                        {% if radek.nazev | length > 25 %}
-                                            {{ radek.nazev[:25] }}...<br>
-                                        {% else %}
-                                            {{ radek.nazev }}<br>
-                                        {% endif %}
-
-                                        {% if radek.autor | length > 25 %}
-                                            {{ radek.autor[:25] }}...<br>
-                                        {% else %}
-                                            {{ radek.autor }}<br>
-                                        {% endif %}
-
-                                        {{ radek.cena }}<br>
-                                </tr>
+                                <a href="{{ radek.link }}">
+                                    <img class="img2" src="{{ radek.hlavni_obrazek }}" alt="{{ radek.hlavni_obrazek }}">
+                                </a><br>
+                                {% if radek.nazev | length > 25 %}
+                                    {{ radek.nazev[:25] }}...<br>
+                                {% else %}
+                                    {{ radek.nazev }}<br>
+                                {% endif %}
+                                {% if radek.autor | length > 25 %}
+                                    {{ radek.autor[:25] }}...<br>
+                                {% else %}
+                                    {{ radek.autor }}<br>
+                                {% endif %}
+                                {{ radek.cena }}<br>
                             </div>
                             {% endfor %}
                         </div>
                     </div>
                     <div style="width:10px;"></div>
                     <div>
-                        <div style="border-color: rgba(221, 255, 0, 0.858);" class="gr11">
+                        <div class="gr11">
                             <p>NEJHLEDANĚJŠÍ:</p><br>
                             {% if tabulka5 %}
                             <div class="item_detail">
-                                <tr >
-                                    <td>
-                                    <a href="{{ tabulka5.link }}">
-                                        <img class="img2" src="{{ tabulka5.hlavni_obrazek }}" alt="{{ tabulka5.hlavni_obrazek }}">
-                                    </a></td><br>
-                                    {% if tabulka5.nazev | length > 25 %}
-                                        {{tabulka5.nazev[:25] }}...<br>
-                                    {% else %}
-                                        {{ tabulka5.nazev }}<br>
-                                    {% endif %}
-
-                                    {% if tabulka5.autor | length > 25 %}
-                                        {{tabulka5.autor[:25] }}...<br>
-                                    {% else %}
-                                        {{ tabulka5.autor }}<br>
-                                    {% endif %}
-                                    {{ tabulka5.cena }}<br>
-                                </tr>
+                                <a href="{{ tabulka5.link }}">
+                                    <img class="img2" src="{{ tabulka5.hlavni_obrazek }}" alt="{{ tabulka5.hlavni_obrazek }}">
+                                </a><br>
+                                {% if tabulka5.nazev | length > 25 %}
+                                    {{ tabulka5.nazev[:25] }}...<br>
+                                {% else %}
+                                    {{ tabulka5.nazev }}<br>
+                                {% endif %}
+                                {% if tabulka5.autor | length > 25 %}
+                                    {{ tabulka5.autor[:25] }}...<br>
+                                {% else %}
+                                    {{ tabulka5.autor }}<br>
+                                {% endif %}
+                                {{ tabulka5.cena }}<br>
                             </div>
                             {% else %}
                             <div class="item_detail">
-                                    <tr>
-                                        <td>
-                                            <a href="{{ tabulka4[0].link }}">
-                                                <img class="img2" src="{{ tabulka4[0].hlavni_obrazek }}" alt="{{ tabulka4[0].hlavni_obrazek }}">
-                                            </a>
-                                        </td>
-                                        <td>
-                                        {% if tabulkav4[0].nazev | length > 25 %}
-                                            {{tabulka4[0].nazev[:25] }}...<br>
-                                        {% else %}
-                                            {{ tabulka4[0].nazev }}<br>
-                                        {% endif %}
-    
-                                        {% if tabulka4[0].autor | length > 25 %}
-                                            {{tabulka4[0].autor[:25] }}...<br>
-                                        {% else %}
-                                            {{ tabulka4[0].autor }}<br>
-                                        {% endif %}
-                                            {{ tabulka4[0].cena }}<br>
-                                        </td>
-                                    </tr>
+                                <a href="{{ tabulka4[0].link }}">
+                                    <img class="img2" src="{{ tabulka4[0].hlavni_obrazek }}" alt="{{ tabulka4[0].hlavni_obrazek }}">
+                                </a><br>
+                                {% if tabulka4[0].nazev | length > 25 %}
+                                    {{ tabulka4[0].nazev[:25] }}...<br>
+                                {% else %}
+                                    {{ tabulka4[0].nazev }}<br>
+                                {% endif %}
+                                {% if tabulka4[0].autor | length > 25 %}
+                                    {{ tabulka4[0].autor[:25] }}...<br>
+                                {% else %}
+                                    {{ tabulka4[0].autor }}<br>
+                                {% endif %}
+                                {{ tabulka4[0].cena }}<br>
                             </div>
                             {% endif %}
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
-        
-        
     </div>
-    <!---novy js button-->
     <button class="student-work-button" onclick="showMessage()">"Tohle je pouze STUDIJNÍ PROJEKT, na stránkách se pracuje, pokračuj kliknutím"</button>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <!---novy-->
 </body>
 </html>
-
-
-
-
-
-
