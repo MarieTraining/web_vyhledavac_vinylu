@@ -1,20 +1,21 @@
-// script.js
 function showMessage() {
     var alerted = sessionStorage.getItem('alerted') || '';
     var button = document.querySelector('.student-work-button');
     
     if (alerted !== 'yes') {
-        button.style.display = 'block'; // Make sure the button is visible
+        button.style.display = 'block'; // viditelny
         button.addEventListener('click', function() {
-            alert("Tohle je pouze STUDIJNÍ PROJEKT, na stránkách se pracuje, pokračuj kliknutím");
+            //alert("Tohle je pouze STUDIJNÍ PROJEKT, na stránkách se pracuje, pokračuj kliknutím");
             sessionStorage.setItem('alerted', 'yes');
-            button.style.display = 'none'; // Hide the button after showing the alert
+            button.style.display = 'none'; //skryty
         });
     } else {
-        button.style.display = 'none'; // Hide the button if already alerted
+        button.style.display = 'none';
     }
     
-    // Log whether alerted is true or not
-    console.log("Is alerted true?", alerted === 'yes');
+    console.log("Is alerted true?", alerted === 'yes'); 
 }
+
+//  showMessage - musi bezet pri naloudování skriptu
+showMessage();
 

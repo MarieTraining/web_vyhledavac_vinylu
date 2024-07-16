@@ -201,7 +201,7 @@ img:hover {
   flex-direction: row;
   justify-content: flex-start;
   gap: 10px; 
-  min-width:600px;
+  min-width:640px;
   max-width: calc(65% - 10px);
 }
 .gr15 {
@@ -218,8 +218,8 @@ img:hover {
   background-color: #ccb37e;
   padding: 20px;
   box-sizing: border-box;
-  max-height: 250px;
-  min-height:200px;
+  max-height: 300px;
+  min-height:247px;
   font-size: small;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -228,13 +228,13 @@ img:hover {
 
 .item {
    
-  min-width: calc(20% - 10px);
+ width: calc(20% - 10px);
 }
 
 .item_detail {
   
   max-width: 170px; 
-  min-width: 170px;
+  min-width: 200px;
   
 }
 
