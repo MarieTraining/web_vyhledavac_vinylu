@@ -1,4 +1,11 @@
-This is EXCLUSIVELY a training material.<br/>	Web that shall simulate a vinyl records search engine.	Username:training; Password:training 	marietraining.pythonanywhere.com/
-Planned actions: 1) adjust styles.css 2) make sql database "live" 3) add detailed view 4) create testing repository 
+This is EXCLUSIVELY a training material.<br/>	
+Web that shall simulate a vinyl records search engine.<br/>
+Username:training; Password:training <br/>
+marietraining.pythonanywhere.com/<br/>
+Planned actions:<br/>
+1) adjust styles.css<br/>
+2) make sql database "live" <br/>
+3) add detailed view<br/>
+4) create testing repository <br/>
 
 
