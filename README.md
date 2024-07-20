@@ -7,4 +7,3 @@ Planned actions:<br/>
 3) add detailed view<br/>
 4) create testing repository <br/>
 
-
