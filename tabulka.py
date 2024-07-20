@@ -62,7 +62,6 @@ class Tabulka:
         self.cursor.close()
         self.mydb.close()
 
-
 """
 hledany_vyraz = "2"
 tabulka= Tabulka().print_table()
