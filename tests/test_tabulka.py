@@ -66,6 +66,5 @@ class TestTabulka(unittest.TestCase):
         self.mock_cursor.close.assert_called_once()
         self.mock_connection.close.assert_called_once()
 
-
 if __name__ == '__main__':
     unittest.main()
