@@ -6,7 +6,7 @@ class Tabulka:
         self.mydb = db.connect(
             host="localhost",
             user="root",
-            password="",
+            password="***",
             database="dB_vyhledavac_desek",
             port=3306 
         )
@@ -19,7 +19,7 @@ class Tabulka:
         self.mydb = db.connect(
             host="MarieTraining.mysql.pythonanywhere-services.com",
             user="MarieTraining",  # PythonAnywhere username
-            password="pythonanywhere",  # Database password
+            password="***",  # Database password
             database="MarieTraining$dB_vyhledavac_desek",
             port=3306
         )
@@ -74,28 +74,3 @@ tabulka5 = Tabulka().mostly_searched(list_of_cookies)
 list_of_cookies = ['hledane vyrazy:', 'naz', None, 'naz', '1','2', None, '5', '2', None, None, 'naz', '1',None, 'naz', None, 'naz', '2', '2', '2', '2', '2', '2', '1', '2', 'naz', 'naz4', 'fff', '1', '2', 'g', 'naz', '1', 'h', '1', '4', '', 'fff', '4', '', '2', 'naz', '', 'naz', 'nhaz', 'nz', '', '190', 'naz', '', '', '', '', 'naz', '', 'naz', '', 'naz', 'naz', 'naz', '2']
 tabulka5 = Tabulka().mostly_searched(list_of_cookies)
 """
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

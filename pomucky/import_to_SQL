@@ -1,5 +1,0 @@
-
-
-
-use MarieTraining$dB_vyhledavac_desek; source /home/MarieTraining/mysite/db_vyhledavac_desek.sql;
-use MarieTraining$db_vyhledavac_desek; source /home/MarieTraining/mysite/db_vyhledavac_desek.sql;

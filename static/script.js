@@ -12,10 +12,7 @@ function showMessage() {
     } else {
         button.style.display = 'none';
     }
-    
     console.log("Is alerted true?", alerted === 'yes'); 
 }
-
 //  showMessage - musi bezet pri naloudování skriptu
 showMessage();
-

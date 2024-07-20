@@ -17,5 +17,3 @@ class Cookie_Manager:
 
     def set_cookie(self, response, list_of_cookies):
         response.set_cookie(self.cookie_name, json.dumps(list_of_cookies))
-        
-
