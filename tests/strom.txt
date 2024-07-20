@@ -1,0 +1,13 @@
+projekt_web_vyhledavac_vinylu/
+├── main.py
+├── tabulka.py
+├── cookie_manager.py
+├── templates/
+│   ├── home.html
+│   ├── oprojektu.html
+│   ├── vyhledani.html
+│   └── detail.html
+└── tests/
+    ├── __init__.py
+    ├── test_main.py
+    └── test_tabulka.py

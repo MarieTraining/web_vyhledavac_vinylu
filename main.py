@@ -50,9 +50,9 @@ def detail():
     try:
         tabulka5 = Tabulka().detail(IDdeska)
         return render_template("detail.html", tabulka5=tabulka5, hledany_vyraz=hledany_vyraz, IDdeska=IDdeska)
-        
     except:
         return render_template("detail.html")
+Tabulka().exit()
 
 if __name__ == "__main__":
     app.run()

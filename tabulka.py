@@ -58,20 +58,19 @@ class Tabulka:
         print(list_cookies)
         return nejcasteji_hledany_detail
 
+    def exit (self):
+        self.cursor.close()
+        self.mydb.close()
 
 
-"""test
+"""
 hledany_vyraz = "2"
 tabulka= Tabulka().print_table()
 tabulka3 =Tabulka().search_table(hledany_vyraz)
-
 tabulka4 =Tabulka().random_detail()
-
 x= Tabulka().detail(2)
-
 list_of_cookies = ['hledane vyrazy:', 'naz', None, 'naz', '1','2', None, '5', '2', None, None, 'naz', '1',None, 'naz', None, 'naz', '2', '2', '2', '2', '2', '2', '1', '2', 'naz', 'naz4', 'fff', '1', '2', 'g', 'naz', '1', 'h', '1', '4', '', 'fff', '4', '', '2', 'naz', '', 'naz', 'nhaz', 'nz', '', '190', 'naz', '', '', '', '', 'naz', '', 'naz', '', 'naz', 'naz', 'naz', '2']
 tabulka5 = Tabulka().mostly_searched(list_of_cookies)
-
 list_of_cookies = ['hledane vyrazy:', 'naz', None, 'naz', '1','2', None, '5', '2', None, None, 'naz', '1',None, 'naz', None, 'naz', '2', '2', '2', '2', '2', '2', '1', '2', 'naz', 'naz4', 'fff', '1', '2', 'g', 'naz', '1', 'h', '1', '4', '', 'fff', '4', '', '2', 'naz', '', 'naz', 'nhaz', 'nz', '', '190', 'naz', '', '', '', '', 'naz', '', 'naz', '', 'naz', 'naz', 'naz', '2']
 tabulka5 = Tabulka().mostly_searched(list_of_cookies)
 """
