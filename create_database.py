@@ -4,8 +4,8 @@ import os
 try:
     mydb = db.connect(
         host="localhost",
-        user="root",
-        port=3306
+        user="***",
+        port=****
     )
 
     mycursor = mydb.cursor()
