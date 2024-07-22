@@ -1,5 +1,6 @@
 import mysql.connector as db
 import csv
+import os
 try:
     mydb = db.connect(
         host="localhost",
@@ -8,8 +9,8 @@ try:
     )
 
     mycursor = mydb.cursor()
-    mycursor.execute("CREATE DATABASE IF NOT EXISTS dB_vyhledavac_desek")
-    mycursor.execute("USE dB_vyhledavac_desek")
+    mycursor.execute("CREATE DATABASE IF NOT EXISTS db_gramodesky")
+    mycursor.execute("USE db_gramodesky")
 
     # Tabulka gramodeska
     mycursor.execute("""
@@ -33,7 +34,11 @@ try:
         INSERT INTO gramodeska (nazev, autor, rok, vydavatelstvi, cena, stav, hlavni_obrazek, link, obchod, timestamp)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
-    file_path = r"C:\Users\kofolník\Desktop\Python\projekt_Web_Vyhledavac_Vinylu\gramodesky.csv"
+    #file_path = r"C:\Users\kofolník\Desktop\Python\projekt_Web_Vyhledavac_Vinylu\datas\gramodesky.csv"
+    directory = os.path.dirname(__file__) 
+    file_path = os.path.join(directory,"datas","gramodesky.csv")
+    print(file_path)
+
     with open(file_path, "r", encoding="utf-8") as soubor:
         reader = csv.reader(soubor)
         mylist = []

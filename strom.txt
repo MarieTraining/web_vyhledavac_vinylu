@@ -1,0 +1,46 @@
+tree /F /A > project_tree.txt
+C:.
+|   cookie_manager.py
+|   create_database.py
+|   gramodesky.csv
+|   main.py
+|   parsovani copy.py
+|   parsovani.py
+|   project_tree.txt
+|   README.md
+|   strom.txt
+|   tabulka.py
+|   
+|           
++---data
+|       gramodesky.csv
+|       
++---static
+|   |   script.js
+|   |   styles.css
+|   |   
+|   \---images
+|           dummy_image.jpg
+|           favicon.ico
+|           home_left - kopie.png
+|           home_left.png
+|           home_left_.png
+|           home_left_a.png
+|           home_left__.png
+|           horni_lista - kopie.jpg
+|           horni_lista.jpg
+|           horni_lista_.jpg
+|           
++---templates
+|       detail.html
+|       home.html
+|       oprojektu.html
+|       vyhledani.html
+|       
++---tests
+|       strom.txt
+|       test_home.py
+|       test_main.py
+|       test_tabulka.py
+|       test_vyhledani.py
+
