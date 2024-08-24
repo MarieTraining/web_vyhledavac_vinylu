@@ -6,7 +6,7 @@ class Tabulka:
         self.mydb = db.connect(
             host="localhost",
             user="root",
-            password="***",
+            #password="***",
             database="dB_vyhledavac_desek",
             port=3306 
         )
