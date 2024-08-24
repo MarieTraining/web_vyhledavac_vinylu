@@ -1,3 +1,10 @@
+#### INTERGRATION test ####
+# Tento má simulovat HTTP požadavky na různé URL a kontroluje, zda vrácené odpovědi obsahují očekávané údaje. 
+# Testuje, jak aplikace jako celek reaguje na různé vstupy a zda správně integruje komponenty jako Tabulka a Cookie_Manager.
+"""Test simuluje výstupní data z Cookie_Manager a Tabulka a ověřuje, zda jsou tato data správně 
+integrována a zobrazená na hlavní stránce aplikace"""
+# Potřebuje zaplý Xammp/databázi
+
 import unittest
 from unittest.mock import patch
 import sys
@@ -11,11 +18,11 @@ from main import app
 class TestHome(unittest.TestCase):
 
     def setUp(self):
-        self.app = app.test_client()
-        self.app.testing = True
+        self.app = app.test_client() #testovací klient pro Flask app. Umožňuje simulovat HTTP požadavky na app bez serveru.
+        self.app.testing = True #režim testování (lepší hlášky)
 
-    @patch('main.Cookie_Manager')
-    @patch('main.Tabulka')
+    @patch('main.Cookie_Manager')#simulace Cookie_Manager v modulu main.py; bez toho nefunguje Mock
+    @patch('main.Tabulka') 
     def test_home_template(self, MockTabulka, MockCookieManager):
         # Mock simuluje vracene hodnoty z mych metod v tabulka.py a cookie_manager.py
         mock_tab = MockTabulka.return_value
@@ -34,8 +41,9 @@ class TestHome(unittest.TestCase):
         response = self.app.get('/')
         
         # Asserty
-        self.assertEqual(response.status_code, 200) #načtení stránky OK
-        self.assertIn(b'Record 1', response.data)
+        self.assertEqual(response.status_code, 200) #chyba 200 =načtení stránky OK; assert ==
+        self.assertIn(b'Record 1', response.data) #in jako instance - zda je stejny objekt
+            # kontrola zda specifické textové řetězce (v podobě bajtů) jsou obsaženy v datech odpovědi (očekávaný obsah je přítomen na stránce, která byla vrácena aplikací)
         self.assertIn(b'Autor 1', response.data)
         self.assertIn(b'100', response.data)
         self.assertIn(b'Record 2', response.data)
@@ -49,5 +57,4 @@ class TestHome(unittest.TestCase):
         self.assertIn(b'400', response.data)
 
 if __name__ == '__main__':  
-    #spouští všechny testy, pokud je skript spuštěn přímo.
     unittest.main()

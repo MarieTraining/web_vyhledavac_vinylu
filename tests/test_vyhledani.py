@@ -1,3 +1,8 @@
+#### INTERGRATION test ####
+"""Test simuluje výstupní data z CookieManager a Tabulka a ověřuje, 
+zda jsou tato data správně generována a zobrazena ve vyhledávacím rozhraní."""
+# Potřebuje zaplý Xammp/databázi
+
 import unittest
 from unittest.mock import patch
 import sys
@@ -17,7 +22,7 @@ class TestVyhledani(unittest.TestCase):
     @patch('tabulka.Tabulka')
     @patch('cookie_manager.Cookie_Manager')
     def test_vyhledani_template(self, MockCookieManager, MockTabulka):
-        # Mocking Tabulka methods
+        
         mock_tab = MockTabulka.return_value
         mock_tab.print_table.return_value = []
         mock_tab.search_table.return_value = [
@@ -31,7 +36,7 @@ class TestVyhledani(unittest.TestCase):
             'hlavni_obrazek': 'image_most.jpg', 'nazev': 'Most Searched', 'autor': 'Popular Autor', 'rok': '2024', 'vydavatelstvi': 'Popular Publisher', 'cena': '400', 'link': '#'
         }
 
-        # Mock metody Cookie_Manager
+        
         mock_cookie = MockCookieManager.return_value
         mock_cookie.get_cookie.return_value = []
 

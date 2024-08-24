@@ -1,10 +1,14 @@
+#### INTERGRATION test ####
+"""Test simuluje výstupní data z Cookie_Manager a Tabulka a ověřuje, zda jsou správně integrována a zobrazená 
+na hlavní stránce aplikace a v dalších funkcích, jako je vyhledávání a detail záznamu"""
+# Potřebuje zaplý Xammp/databázi
+
 import unittest
 from unittest.mock import patch
 import sys
 import os
 
 # pridat root directory do sys.path, viz strom, aby test nasel main.py
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from main import app
@@ -13,7 +17,7 @@ class TestMain(unittest.TestCase):
 
     def setUp(self):
         self.app = app.test_client()
-        self.app.testing = True
+        self.app.testing = True #app v režimu testování
 
     @patch('main.Cookie_Manager')
     @patch('main.Tabulka')
@@ -44,12 +48,13 @@ class TestMain(unittest.TestCase):
 
         response = self.app.get('/vyhledani?hledany_vyraz=test')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Test Search', response.data)
+        self.assertIn(b'Test Search', response.data) 
         self.assertIn(b'Autor', response.data)
         self.assertIn(b'2020', response.data)
         self.assertIn(b'Publisher', response.data)
         self.assertIn(b'100', response.data)
-
+        #response.data: atribut objektu response, který obsahuje obsah odpovědi ve formě bajtového řetězce . Tento obsah může být HTML, JSON, text ....
+        
     @patch('main.Tabulka')
     def test_detail(self, MockTabulka):
         mock_tab = MockTabulka.return_value

@@ -1,5 +1,6 @@
 #### UNIT test ####
-# účel: otestovat metody z tabulka.py
+# účel: otestovat jednotlivě a odděleně metody z tabulka.py
+## Nepotřebuje zaplý Xammp/databázi
 
 import unittest
 from unittest.mock import patch, MagicMock
@@ -12,7 +13,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from tabulka import Tabulka
 
 class TestTabulka(unittest.TestCase):
-    #nahrazuje metodu db.connect v modulu tabulka mockovaným objektem
+    #simulace metody db.connect v modulu tabulka 
     @patch('tabulka.db.connect') 
     
     # metoda set up se spouští před každým testem a nastaví novou instanci třídy Tabulka a "našvindlované(Magic Mock)"  připojení k databázi 
